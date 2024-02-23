@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\DVDLBussinesLogicTier.dll
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\DVDLBussinesLogicTier.pdb
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\DVDLAccessDataTier.dll
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\System.Data.SqlClient.dll
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\DVDLAccessDataTier.pdb
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\bin\Debug\System.Data.SqlClient.xml
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\obj\Debug\DVDLBussinesLogicTier.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\obj\Debug\DVDLBussinesLogicTier.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\obj\Debug\DVDLBussinesLogicTier.csproj.CopyComplete
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\obj\Debug\DVDLBussinesLogicTier.dll
+C:\Users\User\source\repos\DVDLBussinesLogicTier\DVDLBussinesLogicTier\obj\Debug\DVDLBussinesLogicTier.pdb

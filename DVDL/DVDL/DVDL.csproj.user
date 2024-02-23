@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Applications\ApplicationTypes\frmEditApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\ApplicationTypes\frmManageApplicationTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetainAndRelease\frmDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetainAndRelease\frmManageDetainAndReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\InternationalLicense\frmManageInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmMangeLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DetainAndRelease\frmReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmRenewLocalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmReplaceLicenseForDamgeOrLost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmShowLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\InternationalLicense\ctrInternationalLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Applications\InternationalLicense\frmNewInternnationalLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\ctrDrivingLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Applications\InternationalLicense\ctrDrivingLicenseInfoWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\ctrLocalDrivingLicenseCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmAddUpdateLocalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmIssueNewDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmMangeLocalDrivingLicensesApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmShowDrivingLicenseApplicationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\LocalLicense\frmShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Drivers\frmManageDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Applications\InternationalLicense\frmShowInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pepole\ctrPersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pepole\ctrPersonInfoWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Pepole\frmAddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pepole\frmFindAddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pepole\frmManagePepole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmManageTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmMangeTests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmUpdateTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmSechdualTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tests\frmTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users\ctrUserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Users\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users\frmLoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pepole\frmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Users\frmShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

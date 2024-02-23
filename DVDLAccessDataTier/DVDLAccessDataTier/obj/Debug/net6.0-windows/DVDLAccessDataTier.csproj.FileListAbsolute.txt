@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\bin\Debug\net6.0-windows\DVDLAccessDataTier.deps.json
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\bin\Debug\net6.0-windows\DVDLAccessDataTier.dll
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\bin\Debug\net6.0-windows\DVDLAccessDataTier.pdb
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.AssemblyInfo.cs
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.dll
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\refint\DVDLAccessDataTier.dll
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.pdb
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\ref\DVDLAccessDataTier.dll
