@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 namespace DVDLAccessDataTier
 {
     public class clsLocalDrivingLicenseData
@@ -31,7 +31,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -58,7 +58,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -84,7 +84,7 @@ namespace DVDLAccessDataTier
 
                 if (Rows > 0) { Updated = true; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -107,7 +107,7 @@ namespace DVDLAccessDataTier
 
                 if (Result!=null && int.TryParse(Result.ToString(),out int InsertedID)) { LocalDrivingLicenseID = InsertedID; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return LocalDrivingLicenseID;
@@ -131,7 +131,7 @@ namespace DVDLAccessDataTier
                 Reader.Close();
             
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -155,7 +155,7 @@ namespace DVDLAccessDataTier
                 Reader.Close();
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -180,7 +180,7 @@ namespace DVDLAccessDataTier
 
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -203,7 +203,7 @@ namespace DVDLAccessDataTier
                 SqlDataReader Reader = command.ExecuteReader();
                 IsActive = Reader.HasRows;
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -226,7 +226,7 @@ namespace DVDLAccessDataTier
 
                 if (Rows > 0) { Updated = true; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -251,7 +251,7 @@ namespace DVDLAccessDataTier
 
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 

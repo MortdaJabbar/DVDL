@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace DVDLAccessDataTier
 {
@@ -43,7 +36,7 @@ namespace DVDLAccessDataTier
                     Found = true;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -81,7 +74,7 @@ namespace DVDLAccessDataTier
 
                 if (Result != null && int.TryParse(Result.ToString(), out int InsertedID)) { DetainID = InsertedID; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return DetainID;
@@ -121,7 +114,7 @@ namespace DVDLAccessDataTier
 
                 Updated = (Rows > 0);
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -150,7 +143,7 @@ namespace DVDLAccessDataTier
 
                 Updated = (Rows > 0);
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -171,7 +164,7 @@ namespace DVDLAccessDataTier
 
                 Found= Reader.HasRows;
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -206,7 +199,7 @@ namespace DVDLAccessDataTier
                     Found = true;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -231,7 +224,7 @@ namespace DVDLAccessDataTier
                     Found = true;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Found;
@@ -255,7 +248,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
