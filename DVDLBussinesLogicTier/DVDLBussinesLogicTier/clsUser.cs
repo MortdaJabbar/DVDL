@@ -74,15 +74,15 @@ namespace DVDLBussinesLogicTier
         }
         public static bool isUserExsistByUserID(int UserID) 
         {
-            return DVDLAccessDataTier.clsUser.isUserExsistByUserID(UserID);
+            return DVDLAccessDataTier.clsUser.IsUserExsistByUserID(UserID);
         }
         public static bool isUserExsistByPersonID(int PersonID)
         {
-            return DVDLAccessDataTier.clsUser.isUserExsistByPersonID(PersonID);
+            return DVDLAccessDataTier.clsUser.IsUserExsistByPersonID(PersonID);
         }
         public static bool isUserExsist(string UserName,string Password)
         {
-            return DVDLAccessDataTier.clsUser.isUserExsist(UserName,Password);
+            return DVDLAccessDataTier.clsUser.IsUserExsistByUserNameAndPassword(UserName,Password);
         }
         public static DataTable GetAllUsers() 
         {
@@ -120,7 +120,7 @@ namespace DVDLBussinesLogicTier
                 case enMode.UpdateUser:
                     {
                         return _UpdateUser(this.UserID, this.Person.PersonID, this.UserName, this.Password, this.isActive);
-                    }break;
+                    }
                  
 
             }
