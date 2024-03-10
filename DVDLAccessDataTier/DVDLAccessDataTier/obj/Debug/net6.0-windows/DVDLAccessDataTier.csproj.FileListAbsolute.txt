@@ -10,3 +10,4 @@ C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.
 C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\refint\DVDLAccessDataTier.dll
 C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.pdb
 C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\ref\DVDLAccessDataTier.dll
+C:\Users\User\source\repos\DVDLAccessDataTier\DVDLAccessDataTier\obj\Debug\net6.0-windows\DVDLAccessDataTier.sourcelink.json

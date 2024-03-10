@@ -1,19 +1,25 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
+using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DVDLAccessDataTier
 {
+
     public class clsUser
     {
+        public static string GetHashedPassword(string PlainTextPassword) 
+        {
+            byte[] HashedBytes;
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                HashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(PlainTextPassword));
+                
+            }
+
+          return   BitConverter.ToString(HashedBytes).Replace("-", "").ToLower();
+        }
         public static bool FindUserByUserID(int UserID , ref int PersonID,ref string UserName,ref string Password,ref bool isActive) 
         {
             bool Found = false;
@@ -36,7 +42,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
@@ -63,7 +69,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
@@ -75,7 +81,7 @@ namespace DVDLAccessDataTier
             SqlConnection Connection = new SqlConnection(clsAccessString.AccessString);
             SqlCommand command = new SqlCommand(query, Connection);
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Password", GetHashedPassword(Password));
             try
             {
                 Connection.Open();
@@ -90,7 +96,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
@@ -118,6 +124,7 @@ namespace DVDLAccessDataTier
 
             catch (Exception ex)
             {
+                Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error);
                 Console.WriteLine(ex.Message);
             }
 
@@ -135,7 +142,7 @@ namespace DVDLAccessDataTier
            int  UserID = -1;
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Password", GetHashedPassword(Password));
             command.Parameters.AddWithValue("@isActive", isActive);
 
             try
@@ -151,6 +158,7 @@ namespace DVDLAccessDataTier
             }
             catch (Exception e)
             { // log it
+                Global.LogEvent("DVDL", $"{e.Message}", EventLogEntryType.Error);
             }
             finally { connection.Close(); }
 
@@ -168,7 +176,7 @@ namespace DVDLAccessDataTier
             SqlConnection connection = new SqlConnection(clsAccessString.AccessString);
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Password", GetHashedPassword(Password));
             command.Parameters.AddWithValue("@isActive", isActive);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@UserID", UserID);
@@ -179,7 +187,7 @@ namespace DVDLAccessDataTier
 
                 if (Rows > 0) { Updated = true; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -193,7 +201,7 @@ namespace DVDLAccessDataTier
             SqlConnection connection = new SqlConnection(clsAccessString.AccessString);
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Password", GetHashedPassword(Password));
    
             try
             {
@@ -202,7 +210,7 @@ namespace DVDLAccessDataTier
 
                 if (Rows > 0) { Updated = true; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -223,12 +231,13 @@ namespace DVDLAccessDataTier
             }
             catch (Exception ex)
             {
+                Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error);
                 Console.WriteLine($"{ex.Message}");
             }
             finally { connection.Close(); }
             return Deleted;
         }
-        public static bool isUserExsistByUserID(int UserID) 
+        public static bool IsUserExsistByUserID(int UserID) 
         {
             bool Found = false;
             string query = "select 'Found' from Users  Where UserID = @myUserID;";
@@ -243,12 +252,12 @@ namespace DVDLAccessDataTier
                 Found = Reader.HasRows;
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
         }
-        public static bool isUserExsistByPersonID(int PersonID)
+        public static bool IsUserExsistByPersonID(int PersonID)
         {
             bool Found = false;
             string query = "select 'Found' from Users  Where PersonID = @myPersonID;";
@@ -263,19 +272,19 @@ namespace DVDLAccessDataTier
                 Found = Reader.HasRows;
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
         }
-        public static bool isUserExsist(string UserName,string Password)
+        public static bool IsUserExsistByUserNameAndPassword(string UserName,string Password)
         {
             bool Found = false;
             string query = "select 'Found' from Users  Where UserName = @UserName And Password = @myPassword;";
             SqlConnection Connection = new SqlConnection(clsAccessString.AccessString);
             SqlCommand command = new SqlCommand(query, Connection);
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@myPassword", Password);
+            command.Parameters.AddWithValue("@myPassword", GetHashedPassword(Password));
             try
             {
                 Connection.Open();
@@ -284,7 +293,7 @@ namespace DVDLAccessDataTier
                 Found = Reader.HasRows;
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;

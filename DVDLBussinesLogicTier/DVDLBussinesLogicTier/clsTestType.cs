@@ -45,7 +45,7 @@ namespace DVDLBussinesLogicTier
             {
                 case enMode.Update:
                     return _UpdateTestTypes(this.ID, this.Title, this.Description,this.Fees);
-                    break;
+                   
 
             }
 

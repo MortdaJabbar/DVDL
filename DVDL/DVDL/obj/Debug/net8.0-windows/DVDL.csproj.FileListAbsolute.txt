@@ -68,3 +68,4 @@ C:\Users\User\source\repos\DVDL\DVDL\obj\Debug\net8.0-windows\DVDL.DetainAndRele
 C:\Users\User\source\repos\DVDL\DVDL\obj\Debug\net8.0-windows\DVDL.frmReleaseLicense.resources
 C:\Users\User\source\repos\DVDL\DVDL\obj\Debug\net8.0-windows\DVDL.frmManageDetainAndReleaseLicense.resources
 C:\Users\User\source\repos\DVDL\DVDL\obj\Debug\net8.0-windows\DVDL.Tests.frmManageTestType.resources
+C:\Users\User\source\repos\DVDL\DVDL\obj\Debug\net8.0-windows\DVDL.sourcelink.json

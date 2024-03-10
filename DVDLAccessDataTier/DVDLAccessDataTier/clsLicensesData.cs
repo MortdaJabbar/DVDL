@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections;
 
+using System.Diagnostics;
+
 namespace DVDLAccessDataTier
 {
     public  class clsLicensesData
@@ -29,7 +31,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -55,7 +57,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
 
@@ -92,7 +94,7 @@ namespace DVDLAccessDataTier
                 }
                 Reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
 
             finally { Connection.Close(); }
             return Found;
@@ -122,7 +124,7 @@ namespace DVDLAccessDataTier
 
                 if (Result!=null && int.TryParse(Result.ToString(),out int InsertedID)) {LiceseID = InsertedID;}
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return LiceseID;
@@ -163,7 +165,7 @@ namespace DVDLAccessDataTier
 
                 if (Rows > 0) { Updated = true; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Updated;
@@ -184,7 +186,7 @@ namespace DVDLAccessDataTier
                 Detained = reader.HasRows;
                 reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return Detained;
@@ -209,7 +211,7 @@ namespace DVDLAccessDataTier
                 }
                 reader.Close();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return LicneseID;
@@ -229,6 +231,7 @@ namespace DVDLAccessDataTier
             }
             catch (Exception ex)
             {
+                Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error);
                 Console.WriteLine($"{ex.Message}");
             }
             finally { connection.Close(); }
@@ -249,7 +252,7 @@ namespace DVDLAccessDataTier
 
                 if (Result != null && int.TryParse(Result.ToString(), out int InsertedID)) { RenewLicenseID = InsertedID; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return RenewLicenseID;
@@ -271,7 +274,7 @@ namespace DVDLAccessDataTier
 
                 if (Result != null && int.TryParse(Result.ToString(), out int InsertedID)) { RenewLicenseID = InsertedID; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
 
             return RenewLicenseID;
@@ -291,7 +294,7 @@ namespace DVDLAccessDataTier
                 int Rows = command.ExecuteNonQuery();
                 Updated = (Rows > 0);
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
             return Updated;
         }
@@ -308,7 +311,7 @@ namespace DVDLAccessDataTier
                 object  Result = command.ExecuteScalar();
                 Found = (Result != null);
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Global.LogEvent("DVDL", $"{ex.Message}", EventLogEntryType.Error); Console.WriteLine(ex.Message); }
             finally { connection.Close(); }
             return Found;
         }
